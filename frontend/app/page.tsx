@@ -4,12 +4,13 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  FileText, 
-  Shield, 
-  Zap, 
-  Users, 
-  CheckCircle, 
+import BackendStatus from '@/components/BackendStatus'
+import {
+  FileText,
+  Shield,
+  Zap,
+  Users,
+  CheckCircle,
   ArrowRight,
   Star,
   Clock,
@@ -26,7 +27,7 @@ export default function HomePage() {
             <FileText className="h-8 w-8 text-blue-600" />
             <span className="text-2xl font-bold gradient-text">NDARite</span>
           </div>
-          
+
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="#features" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Features
@@ -53,17 +54,17 @@ export default function HomePage() {
           <Badge variant="secondary" className="mb-4">
             🚀 Now in Beta - Generate Your First NDA Free
           </Badge>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Generate Legal NDAs in
             <span className="gradient-text"> Minutes, Not Hours</span>
           </h1>
-          
+
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Create legally-compliant, industry-specific Non-Disclosure Agreements through our 
+            Create legally-compliant, industry-specific Non-Disclosure Agreements through our
             intelligent questionnaire system. No expensive attorney consultations required.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" asChild className="text-lg px-8">
               <Link href="/register">
@@ -75,7 +76,7 @@ export default function HomePage() {
               <Link href="/templates">View Templates</Link>
             </Button>
           </div>
-          
+
           <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
             <div className="flex items-center">
               <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -93,6 +94,21 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Live Backend Integration Status */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              🔥 Live Platform Status
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real-time connection to our backend API showing live data integration
+            </p>
+          </div>
+          <BackendStatus />
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 px-4">
         <div className="container mx-auto">
@@ -104,7 +120,7 @@ export default function HomePage() {
               Professional-grade NDA generation with enterprise features at a fraction of the cost.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="text-center">
               <CardHeader>
@@ -115,7 +131,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader>
                 <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
@@ -125,7 +141,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader>
                 <Users className="h-12 w-12 text-purple-600 mx-auto mb-4" />
@@ -135,7 +151,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader>
                 <FileText className="h-12 w-12 text-orange-600 mx-auto mb-4" />
@@ -145,7 +161,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader>
                 <Clock className="h-12 w-12 text-red-600 mx-auto mb-4" />
@@ -155,7 +171,7 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            
+
             <Card className="text-center">
               <CardHeader>
                 <Globe className="h-12 w-12 text-teal-600 mx-auto mb-4" />
@@ -180,7 +196,7 @@ export default function HomePage() {
               Choose the plan that fits your needs. Upgrade or downgrade anytime.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Free Plan */}
             <Card>
@@ -213,7 +229,7 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             {/* Starter Plan */}
             <Card className="border-blue-500 relative">
               <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2">
@@ -252,7 +268,7 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             {/* Professional Plan */}
             <Card>
               <CardHeader>
@@ -305,7 +321,7 @@ export default function HomePage() {
                 Professional NDA generation platform for businesses of all sizes.
               </p>
             </div>
-            
+
             <div>
               <h3 className="font-semibold mb-4">Product</h3>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -314,7 +330,7 @@ export default function HomePage() {
                 <li><Link href="/features" className="hover:text-blue-600">Features</Link></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -323,7 +339,7 @@ export default function HomePage() {
                 <li><Link href="/legal" className="hover:text-blue-600">Legal</Link></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -333,7 +349,7 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          
+
           <div className="border-t mt-8 pt-8 text-center text-sm text-gray-600">
             <p>&copy; 2024 NDARite. All rights reserved.</p>
           </div>
