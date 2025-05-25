@@ -20,7 +20,7 @@ interface AuthState {
   refreshToken: string | null
   isAuthenticated: boolean
   isLoading: boolean
-  
+
   // Actions
   login: (tokens: { access_token: string; refresh_token: string }, user: User) => void
   logout: () => void
@@ -44,7 +44,7 @@ export const useAuthStore = create<AuthState>()(
           localStorage.setItem('access_token', tokens.access_token)
           localStorage.setItem('refresh_token', tokens.refresh_token)
         }
-        
+
         set({
           user,
           accessToken: tokens.access_token,
@@ -61,7 +61,7 @@ export const useAuthStore = create<AuthState>()(
           localStorage.removeItem('refresh_token')
           localStorage.removeItem('user')
         }
-        
+
         set({
           user: null,
           accessToken: null,
@@ -90,7 +90,7 @@ export const useAuthStore = create<AuthState>()(
           localStorage.setItem('access_token', tokens.access_token)
           localStorage.setItem('refresh_token', tokens.refresh_token)
         }
-        
+
         set({
           accessToken: tokens.access_token,
           refreshToken: tokens.refresh_token

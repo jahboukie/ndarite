@@ -3,12 +3,12 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { 
-  FileText, 
-  Home, 
-  Files, 
-  Template, 
-  Settings, 
+import {
+  FileText,
+  Home,
+  Files,
+  LayoutTemplate,
+  Settings,
   CreditCard,
   LogOut,
   Menu,
@@ -52,7 +52,7 @@ export default function DashboardLayout({
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: Home },
     { name: 'Documents', href: '/dashboard/documents', icon: Files },
-    { name: 'Templates', href: '/dashboard/templates', icon: Template },
+    { name: 'Templates', href: '/dashboard/templates', icon: LayoutTemplate },
     { name: 'Billing', href: '/dashboard/billing', icon: CreditCard },
     { name: 'Settings', href: '/dashboard/settings', icon: Settings },
   ]
@@ -67,7 +67,7 @@ export default function DashboardLayout({
             <span className="text-xl font-bold text-gray-900">NDARite</span>
           </Link>
         </div>
-        
+
         <nav className="mt-8 px-4">
           <ul className="space-y-2">
             {navigation.map((item) => (
@@ -125,7 +125,7 @@ export default function DashboardLayout({
                 Welcome back, {user.first_name}!
               </h1>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm">
                 <Bell className="h-5 w-5" />

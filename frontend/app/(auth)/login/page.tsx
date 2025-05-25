@@ -43,7 +43,7 @@ export default function LoginPage() {
       const { access_token, refresh_token, user } = response.data
 
       login({ access_token, refresh_token }, user)
-      
+
       // Redirect to dashboard
       router.push('/dashboard')
     } catch (err) {

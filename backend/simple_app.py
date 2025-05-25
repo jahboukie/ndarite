@@ -143,19 +143,72 @@ async def register():
 
 @app.post("/api/v1/auth/login")
 async def login():
-    """Mock login endpoint"""
+    """Mock login endpoint with proper token structure"""
     return {
-        "message": "Login endpoint - full implementation coming soon!",
-        "status": "mock"
+        "access_token": "mock-access-token-12345",
+        "refresh_token": "mock-refresh-token-67890",
+        "expires_in": 1800,
+        "user": {
+            "id": "mock-user-123",
+            "email": "demo@ndarite.com",
+            "first_name": "Demo",
+            "last_name": "User",
+            "company_name": "NDARite Demo",
+            "role": "user",
+            "subscription_tier": "free",
+            "email_verified": True,
+            "created_at": "2025-05-24T00:00:00Z",
+            "last_login": "2025-05-24T23:00:00Z"
+        }
     }
 
 @app.get("/api/v1/documents/")
 async def get_documents():
     """Mock documents endpoint"""
     return {
-        "documents": [],
-        "total": 0,
-        "message": "Document management - full implementation coming soon!"
+        "documents": [
+            {
+                "id": "doc-123",
+                "document_name": "Sample Partnership NDA",
+                "status": "generated",
+                "created_at": "2025-05-24T10:00:00Z",
+                "template_id": "template-1"
+            },
+            {
+                "id": "doc-456",
+                "document_name": "Employee Confidentiality Agreement",
+                "status": "signed",
+                "created_at": "2025-05-23T15:30:00Z",
+                "template_id": "template-2"
+            }
+        ],
+        "total": 2
+    }
+
+@app.get("/api/v1/users/usage-stats")
+async def get_usage_stats():
+    """Mock usage stats endpoint"""
+    return {
+        "documents_created": 5,
+        "documents_signed": 3,
+        "templates_used": 2,
+        "storage_used_mb": 1024,
+        "api_calls_this_month": 15,
+        "subscription_tier": "free",
+        "tier_limits": {
+            "documents_per_month": 3,
+            "storage_gb": 1,
+            "api_calls_per_month": 100
+        }
+    }
+
+@app.post("/api/v1/documents/generate")
+async def generate_document():
+    """Mock document generation endpoint"""
+    return {
+        "message": "Document generation endpoint - full implementation coming soon!",
+        "document_id": "mock-doc-123",
+        "status": "mock"
     }
 
 # Error handlers
@@ -178,14 +231,14 @@ async def not_found_handler(request, exc):
 
 if __name__ == "__main__":
     print("🚀 Starting NDARite Backend (Simplified Version)...")
-    print("📍 Server will be available at: http://localhost:8000")
-    print("📚 API documentation at: http://localhost:8000/docs")
+    print("📍 Server will be available at: http://localhost:8001")
+    print("📚 API documentation at: http://localhost:8001/docs")
     print("🔄 This is a simplified version for testing")
     print("\nPress Ctrl+C to stop the server\n")
 
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=8000,
+        port=8001,
         log_level="info"
     )
